@@ -31,6 +31,9 @@
               <span class="font-display text-[0.7rem] font-bold tracking-wide text-indigo-400">01</span>
               Job Input
             </span>
+            <span v-if="mode === 'link'" class="text-[0.7rem] font-bold tracking-wide text-indigo-400">
+              WARNING: This feature is beta and working only with DOU, Work.UA, djinni
+            </span>
             <ElDropdown trigger="click" @command="onModeChange">
               <span class="cursor-pointer rounded-full border border-white/[0.08] px-3 py-1 text-xs font-medium text-slate-500 transition-all hover:border-white/[0.18] hover:text-slate-200">
                 {{ modeLabel }} <span class="opacity-50">⌄</span>
