@@ -1,0 +1,45 @@
+/* src/styles/element-override.css — imported AFTER element-plus/dist/index.css */
+
+:root {
+  --el-input-bg-color: rgba(255, 255, 255, 0.04);
+  --el-input-border-color: #818cf8;
+  --el-input-hover-border-color: rgba(255, 255, 255, 0.20);
+  --el-input-focus-border-color: #818cf8;
+  --el-input-text-color: #e2e8f0;
+  --el-input-placeholder-color: rgba(148, 163, 184, 0.45);
+  --el-input-icon-color: rgba(148, 163, 184, 0.5);
+  --el-input-border-radius: 10px;
+  --el-border-color: #818df863;
+
+  /* also kills the white bg El Plus forces on the wrapper */
+  --el-fill-color-blank: rgba(255, 255, 255, 0.04);
+}
+
+/* Placeholder needs a direct rule — CSS vars can't reach ::placeholder */
+.el-input__inner::placeholder,
+.el-textarea__inner::placeholder {
+  color: rgba(148, 163, 184, 0.45);
+}
+
+/* Focus glow ring — CSS vars alone can't add the outer glow layer */
+.el-input__wrapper.is-focus {
+  box-shadow: 0 0 0 1px #818cf8 inset,
+    0 0 0 3px rgba(129, 140, 248, 0.15) !important;
+}
+
+.el-textarea__inner:focus {
+  box-shadow: 0 0 0 1px #818cf8 inset,
+    0 0 0 3px rgba(129, 140, 248, 0.15) !important;
+  outline: none;
+}
+
+/* Dark scrollbar for textarea */
+.el-textarea__inner {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(99, 102, 241, 0.3) transparent;
+  box-shadow: 0 0 0 1px #818df863 inset;
+}
+
+.el-input__wrapper {
+  box-shadow: 0 0 0 1px #818df863 inset;
+}
